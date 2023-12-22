@@ -177,7 +177,76 @@
 			<section>
 				<section>Walkthrough: <b>Initialize Repository</b></section>
 				<section>
-					<pre><code class="typing">here is an example</code></pre>
+					<p>On your local machine, initialize a repository.</p>
+					<p style="font-size: medium;"><i>In project root, run the following command:</i></p>
+					<pre><code class="typing language-bash">
+						git init
+					</code></pre>
+				</section>
+				<section>
+					<p>Here is what that generated:</p>
+					<pre><code style="font-size: medium;" class="language-bash">
+						.git/
+						├── branches/    # Stores information about local branches
+						├── config       # Contains configuration settings for the repository
+						├── description  # Optional file for a short description of the repository
+						├── HEAD         # Points to the current branch
+						├── hooks/       # Contains scripts for custom Git actions
+						├── index        # Tracks the state of the working tree
+						├── info/        # Contains additional information about the repository
+						├── objects/     # Stores all of the Git objects (commits, trees, blobs)
+						└── refs/        # Contains references to commits and tags
+					</code></pre>
+				</section>
+				<section>
+					<p>Remember that this is a peer-to-peer system</p>
+					<p style="font-size: medium;" class="fragment">We just initialized our local repository</p>
+				</section>
+			</section>
+
+			<section>
+				<section>Walkthrough: <b>Staging Changes</b></section>
+				<section>
+					<p>Let's create a file to track</p>
+					<p style="font-size: medium;"><i>In project directory run the following command:</i></p>
+					<pre><code class="typing language-bash">
+						touch index.html
+					</code></pre>
+
+					<p style="font-size: medium;" class="fragment">
+						<i></i>
+					</p>
+				</section>
+				<section>
+					<p>Now let's stage that file</p>
+					<p style="font-size: medium;"><i>Run the following command:</i></p>
+					<pre><code class="typing language-bash">
+						git add index.html
+					</code></pre>
+					<p style="font-size: medium;" class="fragment"><i>If you have more files to stage, you can stage all of them at once by running this:</i></p>
+					<pre class="fragment language-bash"><code class="typing">
+						git add .
+					</code></pre>
+				</section>
+				<section>
+					<p>Let's see what we staged</p>
+					<p style="font-size: medium;"><i>In project root, run the following command:</i></p>
+					<pre><code class="typing language-bash">
+						git status
+					</code></pre>
+					<p style="font-size: medium;" class="fragment"><i>Here is what you should see:</i></p>
+					<pre style="font-size: medium;" class="fragment language-bash"><code>
+						On branch main
+
+						No commits yet
+
+						Changes to be committed:
+							(use "git rm --cached &lt;file&gt;..." to unstage)
+									new file:   index.html
+					</code></pre>
+				</section>
+				<section>
+					
 				</section>
 			</section>
 		</div>
@@ -197,10 +266,6 @@
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
-	</script>
-
-	<script>
-		
 	</script>
 </body>
 

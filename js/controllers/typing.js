@@ -31,15 +31,15 @@ export default function type_animation() {
         if (entries[0].isIntersecting) {
             // Check if the parent element is not hidden
             // let parentStyle = window.getComputedStyle(element.parentElement);
-            // console.log(entries[0].target.parentElement.parentElement.hidden);
+            console.log(entries[0].target.parentElement.parentElement.hidden);
 
             if (entries[0].target.parentElement.parentElement.hidden === false) {
                 // Check if the typing animation is not already running
                 if (intervalId === null) {
                     // Start the interval
-                    if (isRunning === false) {
+                    // if (isRunning === false) {
                         intervalId = setInterval(addCharacter, 100); // Adjust the second parameter to control the speed
-                    }
+                    // }
 
                     // Stop observing since we don't need it anymore
                     observer.unobserve(element);
