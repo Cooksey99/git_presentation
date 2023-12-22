@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/dracula.css">
+
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>Understanding Git and GitHub</section>
+			<section>
+				<section>
+					What is Git?
+				</section>
+				<section>
+					<p>Git is a distributed version control system</p>
+					<!-- explain what a distrubted version control system is -->
+					<ul style="font-size: medium;">
+						<li class="fragment">A version control system is a system that tracks and manages changes to
+							folders/files.</li>
+						<li class="fragment">A distributed version control system takes that same system and adds a
+							peer-to-peer model to
+							it.</li>
+					</ul>
+
+					<p style="font-size: medium;" class="fragment"><u>Git is <b>NOT</b> the same as Github. Github is a
+							platform
+							built on top of Git.</u></p>
+				</section>
+				<section>
+					Why use Git?
+					<ul style="font-size: medium; margin-top: 20px;">
+						<li class="fragment">Track every change: See the complete history of your project and easily
+							revert to previous
+							versions.</li>
+						<li class="fragment">Collaborate seamlessly: Work on the same project with others without
+							conflicts or messy
+							merging.</li>
+						<li class="fragment">Experiment without risk: Use branches to try out new features without
+							affecting the main
+							codebase.</li>
+						<li class="fragment">Recover from disasters: Never lose your work again with Git's complete
+							version control.</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<p>Git Project Flow</p>
+					<ol style="font-size: medium;">
+						<li class="fragment">Initialize repository</li>
+						<li class="fragment">Stage changes</li>
+						<li class="fragment">Commit changes</li>
+						<li class="fragment">Branching</li>
+						<li class="fragment">Merging</li>
+						<li class="fragment">Remote repository</li>
+						<li class="fragment">Pull changes</li>
+					</ol>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<p>Initialize a Repository</p>
+					<li style="font-size: medium;" class="fragment">To create the .git directory</li>
+				</section>
+				<section>
+					<p>Git Directory</p>
+					<ul style="font-size: medium;">
+						<li class="fragment">The .git directory contains all of the git data, from the upstream
+							repository to change history.</li>
+						<li class="fragment">This is what makes a repository a repository</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<p>Staging Changes</p>
+				<p style="font-size: medium;" class="fragment"><i>Staging is the process of adding files to be
+						tracked.</i></p>
+
+				<ul style="font-size: medium;">
+					<li class="fragment">To stage changes, use the command <code>git add &lt;filename&gt;</code></li>
+					<ul class="fragment">
+						<li><i>Multiple files and directories can be separated by spaces</i></li>
+					</ul>
+					<li class="fragment">To stage all changes, use the command <code>git add .</code></li>
+				</ul>
+			</section>
+
+			<section>
+				<p>Committing Changes</p>
+				<p style="font-size: medium;" class="fragment"><i>Committing is the process of saving those staged
+						changes into an object, which can later be pushed.</i></p>
+
+				<ul style="font-size: medium;">
+					<li class="fragment">To commit staged changes, use the command
+						<code>git commit -m "&lt;message&gt;"</code>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<p>Branching</p>
+				<i style="font-size: medium;" class="fragment">Allows multiple “save points” for your work.</i>
+				<ul style="font-size: medium;">
+					<li class="fragment">New features can be created a new branch, which is later merged into the main
+						branch</li>
+					<li class="fragment">If issues arise on one branch, it does NOT impact any other branch</li>
+					<li class="fragment">To update the remote repo, push changes (<code>git push</code>)</li>
+				</ul>
+			</section>
+
+			<section>
+				<section>
+					<p>Remote Repository</p>
+					<p style="font-size: medium;" class="fragment"><i>A remote repository is the version of the project,
+							which is hosted on a network.</i></p>
+					<ul style="font-size: medium;">
+						<li class="fragment">Remote repositories can be hosted on a variety of platforms, such as
+							Github, Gitlab, Bitbucket, etc.</li>
+						<li class="fragment">GitHub is the most popular</li>
+					</ul>
+					<li style="font-size: medium;" class="fragment">There can be multiple remotes</li>
+				</section>
+				<section>
+					<img src="/data/images/managing-branches.png" alt="Managing Branches">
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<p>Git Workflows</p>
+					<ul style="font-size: medium;" class="fragment">
+						<li>Centralized Workflow</li>
+						<li>Feature Branch Workflow</li>
+						<li>Gitflow Workflow</li>
+						<li>Forking Workflow</li>
+					</ul>
+				</section>
+				<section>
+					<p>Centralized Workflow</p>
+					<p style="font-size: medium;" class="fragment">All developers work on the main branch</p>
+
+				</section>
+				<section>
+					<p>Feature Branch Workflow</p>
+					<!-- <p style="font-size: medium;" class="fragment"></p> -->
+				</section>
+				<section>
+					<img src="/data/images/feature-branch.png" alt="Feature Branch Workflow">
+				</section>
+
+				<section>
+					<p>Gitflow Workflow</p>
+					<p style="font-size: medium;" class="fragment"></p>
+				</section>
+				<section>
+					<p>Forking Workflow</p>
+					<p style="font-size: medium;" class="fragment"></p>
+				</section>
+			</section>
+
+			<section>
+				<section>Walkthrough: <b>Initialize Repository</b></section>
+				<section>
+					<pre><code class="typing">here is an example</code></pre>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+
+	<script>
+		
+	</script>
+</body>
+
+</html>
