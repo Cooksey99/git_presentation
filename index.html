@@ -205,7 +205,7 @@
 			</section>
 
 			<section>
-				<section>Walkthrough: <b>Staging Changes</b></section>
+				<section>Walkthrough: <b>Staging and Committing</b></section>
 				<section>
 					<p>Let's create a file to track</p>
 					<p style="font-size: medium;"><i>In project directory run the following command:</i></p>
@@ -244,9 +244,86 @@
 							(use "git rm --cached &lt;file&gt;..." to unstage)
 									new file:   index.html
 					</code></pre>
+					<p style="font-size: medium;" class="fragment"><b>Notice that the file is staged, but not committed</b></p>
 				</section>
 				<section>
-					
+					<p></p>
+					<p style="font-size: medium;"><i>In project root, run the following command:</i></p>
+					<pre><code class="typing language-bash">
+						git commit -m "Initial commit"
+					</code></pre>
+
+					<p style="font-size: medium;" class="fragment"><i>You should see something similar to this:</i></p>
+					<pre style="font-size: medium;" class="fragment language-bash"><code>
+						[main (root-commit) 5aedcb9] initial commit
+						1 file changed, 0 insertions(+), 0 deletions(-)
+						create mode 100644 index.html
+					</code></pre>
+					<p style="font-size: medium;" class="fragment"><b>Let's break that down...</b></p>
+				</section>
+				<section>
+					<p><code>[main (root-commit) 5aedcb9]</code></p>
+					<ul style="font-size: medium;">
+						<li><code>[main]</code>: Indicates that the commit was made on the main branch, which is the default branch in many Git repositories.</li>
+						<li><code>(root-commit)</code>: Specifies that this is the very first commit in the repository's history, meaning there are no previous commits to reference.</li>
+						<li><code>5aedcb9]</code>: The unique 40-character hexadecimal hash that identifies this specific commit. It serves as a "fingerprint" for this version of the repository.</li>
+					</ul>
+				</section>
+				<section>
+					<p><code>1 file changed, 0 insertions(+), 0 deletions(-):</code></p>
+					<ul style="font-size: medium;">
+						<li><code>1 file changed</code>: Indicates that one file was changed in this commit.</li>
+						<li><code>0 insertions(+)</code>: Indicates that no lines were added to the file.</li>
+						<li><code>0 deletions(-)</code>: Indicates that no lines were removed from the file.</li>
+					</ul>
+				</section>
+				<section>
+					<p><code>create mode 100644 index.html:</code></p>
+					<ul style="font-size: medium;">
+						<li><code>create mode 100644</code>: Indicates that a new file was created.</li>
+						<li><code>index.html</code>: The name of the file that was created.</li>
+					</ul>
+				</section>
+				<section>
+					<p>The changes have been staged and committed, but they are still only on our local machine.</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>Walkthrough: <b>Create Remote Repository</b></p>
+				</section>
+				<section>
+					<p>Let's create a remote repository on Github</p>
+					<p style="font-size: medium;"><i>Go to <a target="_blank" href="https://github.com">Github</a> and navigate to your profile overview. Near the top, you should see this:</i></p>
+					<img src="/data/images/repo-page.png" alt="GitHub New Repository" style="border-radius: 15px;">
+					<p style="font-size: medium;" class="fragment"><b>Click the green button that says "New"</b></p>
+				</section>
+				<section>
+					<p>Name your repository</p>
+					<p style="font-size: medium;"><i>Don't worry, you can change it later!</i></p>
+					<img src="/data/images/create-repo.png" alt="Github Repository" height="450px" style="border-radius: 15px;">
+					<p style="font-size: medium;"><b>Once you name the repo and select an owner, click the "Create repository" button</b></p>
+				</section>
+				<section>
+					<p>Now we need to connect our local repository to the remote repository</p>
+					<p style="font-size: medium;"><i>After creating the repository, you should see this:</i></p>
+					<img src="/data/images/quick-setup.png" alt="GitHub quick setup" style="border-radius: 15px;">
+					<p style="font-size: medium;" class="fragment"><b>Copy the link starting with "git@github.com"</b></p>
+					<p style="font-size: small;" class="fragment"><i>In this case, it would be "git@github.com:Cooksey99/git_demo.git"</i></p>
+				</section>
+				<section>
+					<p></p>
+					<p style="font-size: medium;"><i>In your local project repository, run the following command:</i></p>
+					<pre><code class="typing language-bash" style="font-size: medium;">
+						# git remote add &lt;origin&gt; &lt;url&gt;</code>
+						<code style="font-size: medium;" class="typing">
+						git remote add origin git@github.com:Cooksey99/git_demo.git
+						</code>
+					</pre>
+					<ul style="font-size: medium;">
+						<li><b><code>origin</code>: the name used to reference this remote repository (remember there can be multiple)</b></li>
+						<li><b><code>url</code>: the url of the remote repository</b></li>
+					</ul>
 				</section>
 			</section>
 		</div>
