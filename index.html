@@ -309,7 +309,7 @@
 					<p style="font-size: medium;"><i>After creating the repository, you should see this:</i></p>
 					<img src="/data/images/quick-setup.png" alt="GitHub quick setup" style="border-radius: 15px;">
 					<p style="font-size: medium;" class="fragment"><b>Copy the link starting with "git@github.com"</b></p>
-					<p style="font-size: small;" class="fragment"><i>In this case, it would be "git@github.com:Cooksey99/git_demo.git"</i></p>
+					<p style="font-size: small;" class="fragment"><b>In this case, it would be "git@github.com:Cooksey99/git_demo.git"</b></p>
 				</section>
 				<section>
 					<p></p>
@@ -321,9 +321,27 @@
 						</code>
 					</pre>
 					<ul style="font-size: medium;">
-						<li><b><code>origin</code>: the name used to reference this remote repository (remember there can be multiple)</b></li>
-						<li><b><code>url</code>: the url of the remote repository</b></li>
+						<li><code>origin</code>: the name used to reference this remote repository (remember there can be multiple)</li>
+						<li><code>url</code>: the url of the remote repository</li>
 					</ul>
+				</section>
+				<section>
+					<p>Our local repository now has a connection with the remote repository</p>
+					<p style="font-size: medium;">Inside of the <code>.git/config</code> file, we can see that</p>
+					<pre style="font-size: medium;" class="language-bash">
+						<code data-line-numbers>						[core]
+						repositoryformatversion = 0
+						filemode = true
+						bare = false
+						logallrefupdates = true
+						ignorecase = true
+						precomposeunicode = true
+						[remote "origin"]
+						url = git@github.com:Cooksey99/git_demo.git
+						fetch = +refs/heads/*:refs/remotes/origin/*
+					</code></pre>
+					<p style="font-size: medium;" class="fragment"><b>Notice the <code>remote "origin"</code> section</b></p>
+					<p style="font-size: medium;" class="fragment"><b>The command automatically generated that for us.</b></p>
 				</section>
 			</section>
 		</div>
