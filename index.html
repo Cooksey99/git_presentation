@@ -143,6 +143,38 @@
 
 			<section>
 				<section>
+					<p>Pull Changes</p>
+					<p style="font-size: medium;" class="fragment"><i>Pulling is the process of updating your local
+							repository with the changes from the remote repository.</i></p>
+					<ul style="font-size: medium;">
+						<li class="fragment">To pull changes, use the command <code>git pull</code></li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<p>Tags</p>
+					<p style="font-size: medium;" class="fragment"><i>Tags are used to mark a specific point in the
+							project's history.</i></p>
+				</section>
+				<section>
+					<p>Tags vs. Branches</p>
+					<ul style="font-size: medium;">
+						<li class="fragment">Tags are used to mark a specific point in the project's history.</li>
+						<li class="fragment">Branches are used to develop features, and are later merged into the main
+							branch.</li>
+					</ul>
+					<p style="font-size: medium;" class="fragment"><b>Tags are frequently used to mark versions in a project.</b></p>
+				</section>
+				<section>
+					<p style="font-size: large;">Creating a tag will generate a new file in <code>.git/refs/tags</code></p>
+					<img src="/data/images/git-tags.png" alt="Tags">
+				</section>
+			</section>
+
+			<section>
+				<section>
 					<p>Git Workflows</p>
 					<ul style="font-size: medium;" class="fragment">
 						<li>Centralized Workflow</li>
@@ -172,6 +204,10 @@
 					<p>Forking Workflow</p>
 					<p style="font-size: medium;" class="fragment"></p>
 				</section>
+			</section>
+
+			<section>
+				<section>Git Merges</section>
 			</section>
 
 			<section>
@@ -223,7 +259,8 @@
 					<pre><code class="typing language-bash">
 						git add index.html
 					</code></pre>
-					<p style="font-size: medium;" class="fragment"><i>If you have more files to stage, you can stage all of them at once by running this:</i></p>
+					<p style="font-size: medium;" class="fragment"><i>If you have more files to stage, you can stage all
+							of them at once by running this:</i></p>
 					<pre class="fragment language-bash"><code class="typing">
 						git add .
 					</code></pre>
@@ -244,7 +281,8 @@
 							(use "git rm --cached &lt;file&gt;..." to unstage)
 									new file:   index.html
 					</code></pre>
-					<p style="font-size: medium;" class="fragment"><b>Notice that the file is staged, but not committed</b></p>
+					<p style="font-size: medium;" class="fragment"><b>Notice that the file is staged, but not
+							committed</b></p>
 				</section>
 				<section>
 					<p></p>
@@ -264,9 +302,12 @@
 				<section>
 					<p><code>[main (root-commit) 5aedcb9]</code></p>
 					<ul style="font-size: medium;">
-						<li><code>[main]</code>: Indicates that the commit was made on the main branch, which is the default branch in many Git repositories.</li>
-						<li><code>(root-commit)</code>: Specifies that this is the very first commit in the repository's history, meaning there are no previous commits to reference.</li>
-						<li><code>5aedcb9]</code>: The unique 40-character hexadecimal hash that identifies this specific commit. It serves as a "fingerprint" for this version of the repository.</li>
+						<li><code>[main]</code>: Indicates that the commit was made on the main branch, which is the
+							default branch in many Git repositories.</li>
+						<li><code>(root-commit)</code>: Specifies that this is the very first commit in the repository's
+							history, meaning there are no previous commits to reference.</li>
+						<li><code>5aedcb9]</code>: The unique 40-character hexadecimal hash that identifies this
+							specific commit. It serves as a "fingerprint" for this version of the repository.</li>
 					</ul>
 				</section>
 				<section>
@@ -294,26 +335,32 @@
 				</section>
 				<section>
 					<p>Let's create a remote repository on Github</p>
-					<p style="font-size: medium;"><i>Go to <a target="_blank" href="https://github.com">Github</a> and navigate to your profile overview. Near the top, you should see this:</i></p>
+					<p style="font-size: medium;"><i>Go to <a target="_blank" href="https://github.com">Github</a> and
+							navigate to your profile overview. Near the top, you should see this:</i></p>
 					<img src="/data/images/repo-page.png" alt="GitHub New Repository" style="border-radius: 15px;">
 					<p style="font-size: medium;" class="fragment"><b>Click the green button that says "New"</b></p>
 				</section>
 				<section>
 					<p>Name your repository</p>
 					<p style="font-size: medium;"><i>Don't worry, you can change it later!</i></p>
-					<img src="/data/images/create-repo.png" alt="Github Repository" height="450px" style="border-radius: 15px;">
-					<p style="font-size: medium;"><b>Once you name the repo and select an owner, click the "Create repository" button</b></p>
+					<img src="/data/images/create-repo.png" alt="Github Repository" height="450px"
+						style="border-radius: 15px;">
+					<p style="font-size: medium;"><b>Once you name the repo and select an owner, click the "Create
+							repository" button</b></p>
 				</section>
 				<section>
 					<p>Now we need to connect our local repository to the remote repository</p>
 					<p style="font-size: medium;"><i>After creating the repository, you should see this:</i></p>
 					<img src="/data/images/quick-setup.png" alt="GitHub quick setup" style="border-radius: 15px;">
-					<p style="font-size: medium;" class="fragment"><b>Copy the link starting with "git@github.com"</b></p>
-					<p style="font-size: small;" class="fragment"><b>In this case, it would be "git@github.com:Cooksey99/git_demo.git"</b></p>
+					<p style="font-size: medium;" class="fragment"><b>Copy the link starting with "git@github.com"</b>
+					</p>
+					<p style="font-size: small;" class="fragment"><b>In this case, it would be
+							"git@github.com:Cooksey99/git_demo.git"</b></p>
 				</section>
 				<section>
 					<p></p>
-					<p style="font-size: medium;"><i>In your local project repository, run the following command:</i></p>
+					<p style="font-size: medium;"><i>In your local project repository, run the following command:</i>
+					</p>
 					<pre><code class="typing language-bash" style="font-size: medium;">
 						# git remote add &lt;origin&gt; &lt;url&gt;</code>
 						<code style="font-size: medium;" class="typing">
@@ -321,7 +368,8 @@
 						</code>
 					</pre>
 					<ul style="font-size: medium;">
-						<li><code>origin</code>: the name used to reference this remote repository (remember there can be multiple)</li>
+						<li><code>origin</code>: the name used to reference this remote repository (remember there can
+							be multiple)</li>
 						<li><code>url</code>: the url of the remote repository</li>
 					</ul>
 				</section>
@@ -340,8 +388,10 @@
 						url = git@github.com:Cooksey99/git_demo.git
 						fetch = +refs/heads/*:refs/remotes/origin/*
 					</code></pre>
-					<p style="font-size: medium;" class="fragment"><b>Notice the <code>remote "origin"</code> section</b></p>
-					<p style="font-size: medium;" class="fragment"><b>The command automatically generated that for us.</b></p>
+					<p style="font-size: medium;" class="fragment"><b>Notice the <code>remote "origin"</code>
+							section</b></p>
+					<p style="font-size: medium;" class="fragment"><b>The command automatically generated that for
+							us.</b></p>
 				</section>
 			</section>
 		</div>

@@ -241,7 +241,7 @@ export default class Controls {
 		this.Reveal.onUserInput();
 
 		this.Reveal.down();
-		// type_animation();
+		type_animation();
 	}
 
 	onNavigatePrevClicked( event ) {
