@@ -209,6 +209,44 @@
 
 			<section>
 				<section>Git Merges</section>
+				<section>
+					<p>Fast-Forward Merge</p>
+					<p style="font-size: medium;" class="fragment"><i>Fast-forward merges occur when the target branch
+							has not changed since the feature branch was created.</i></p>
+					<p style="font-size: medium;" class="fragment"><i>When this happens, Git simply moves the pointer
+							forward.</i></p>
+				</section>
+				<section>
+					<p>Squash Merge</p>
+					<p style="font-size: medium;" class="fragment"><i>Squash merges combine all of the commits from the
+							feature branch into a single commit.</i></p>
+				</section>
+				<section>
+					<p>Rebase Merge</p>
+					<p style="font-size: medium;" class="fragment"><i>Rebase merges are similar to squash merges, but
+							they preserve the commit history.</i></p>
+				</section>
+				<section>
+					<p style="font-size: medium;" class="fragment">These merges can be performed via the command line, or on GitHub.</p>
+					<p style="font-size: medium;" class="fragment">To perform a merge on GitHub, create a pull request and select the merge method.</p>
+					<p style="font-size: medium;" class="fragment">To perform a merge via the command line, use the command <code>git merge &lt;branch&gt;</code></p>
+				</section>
+				<section>
+					<p>Merge Conflicts</p>
+					<p style="font-size: medium;" class="fragment"><i>Merge conflicts occur when the same line(s) of code are changed in two different branches.</i></p>
+					<p style="font-size: medium;" class="fragment"><i>Git will not know which change to keep, so it will ask the developer to resolve the conflict.</i></p>
+					<div style="display: flex; gap: 20px; justify-content: center;" class="fragment">
+						<figure>
+							<img src="/public/images/merge-add.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
+							<figcaption style="font-size: medium;">The "+" indicates that line was added</figcaption>
+						</figure>
+						<figure>
+							<img src="/public/images/merge-remove.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
+							<figcaption style="font-size: medium;">The "-" indicates that line was removed</figcaption>
+						</figure>
+					</div>
+					<p style="font-size: medium;" class="fragment"><b>Once the conflict is resolved, the developer can commit the changes.</b></p>
+				</section>
 			</section>
 
 			<section>
