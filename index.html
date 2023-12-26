@@ -496,7 +496,20 @@
 						<li><code>origin</code>: the name of the remote repository</li>
 						<li><code>main</code>: the name of the branch</li>
 					</ul>
-					
+				</section>
+				<section>
+					<p>There is actually another common method to perform that action</p>
+					<p style="font-size: medium;"><i>In your local project repository, run the following command:</i></p>
+					<pre><code class="typing language-bash" style="font-size: medium;">
+						# git push --set-upstream &lt;remote&gt; &lt;branch&gt;</code>
+						<code style="font-size: medium;" class="typing">						git push --set-upstream origin main
+					</code></pre>
+					<p style="font-size: medium;" class="fragment"><b>Notice the <code>--set-upstream</code> flag</b>
+					</p>
+					<p style="font-size: medium;" class="fragment"><b>This command will set the default remote and
+							branch for future pushes</b></p>
+					<p style="font-size: medium;" class="fragment"><b>After running this command, you can simply run
+							<code>git push</code> to push changes to the remote repository</b></p>
 				</section>
 				<section>
 					<p>Now let's check our remote repository</p>
