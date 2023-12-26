@@ -165,7 +165,8 @@
 						<li class="fragment">Branches are used to develop features, and are later merged into the main
 							branch.</li>
 					</ul>
-					<p style="font-size: medium;" class="fragment"><b>Tags are frequently used to mark versions in a project.</b></p>
+					<p style="font-size: medium;" class="fragment"><b>Tags are frequently used to mark versions in a
+							project.</b></p>
 				</section>
 				<section>
 					<p style="font-size: large;">Creating a tag will generate a new file in <code>.git/refs/tags</code></p>
@@ -208,44 +209,6 @@
 
 			<section>
 				<section>Git Merges</section>
-				<section>
-					<p>Fast-Forward Merge</p>
-					<p style="font-size: medium;" class="fragment"><i>Fast-forward merges occur when the target branch
-							has not changed since the feature branch was created.</i></p>
-					<p style="font-size: medium;" class="fragment"><i>When this happens, Git simply moves the pointer
-							forward.</i></p>
-				</section>
-				<section>
-					<p>Squash Merge</p>
-					<p style="font-size: medium;" class="fragment"><i>Squash merges combine all of the commits from the
-							feature branch into a single commit.</i></p>
-				</section>
-				<section>
-					<p>Rebase Merge</p>
-					<p style="font-size: medium;" class="fragment"><i>Rebase merges are similar to squash merges, but
-							they preserve the commit history.</i></p>
-				</section>
-				<section>
-					<p style="font-size: medium;" class="fragment">These merges can be performed via the command line, or on GitHub.</p>
-					<p style="font-size: medium;" class="fragment">To perform a merge on GitHub, create a pull request and select the merge method.</p>
-					<p style="font-size: medium;" class="fragment">To perform a merge via the command line, use the command <code>git merge &lt;branch&gt;</code></p>
-				</section>
-				<section>
-					<p>Merge Conflicts</p>
-					<p style="font-size: medium;" class="fragment"><i>Merge conflicts occur when the same line(s) of code are changed in two different branches.</i></p>
-					<p style="font-size: medium;" class="fragment"><i>Git will not know which change to keep, so it will ask the developer to resolve the conflict.</i></p>
-					<div style="display: flex; gap: 20px; justify-content: center;" class="fragment">
-						<figure>
-							<img src="/public/images/merge-add.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
-							<figcaption style="font-size: medium;">The "+" indicates that line was added</figcaption>
-						</figure>
-						<figure>
-							<img src="/public/images/merge-remove.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
-							<figcaption style="font-size: medium;">The "-" indicates that line was removed</figcaption>
-						</figure>
-					</div>
-					<p style="font-size: medium;" class="fragment"><b>Once the conflict is resolved, the developer can commit the changes.</b></p>
-				</section>
 			</section>
 
 			<section>
@@ -272,8 +235,11 @@
 					<p>GitHub Pages</p>
 					<p style="font-size: medium;" class="fragment"><i>GitHub Pages is a feature that allows you to host
 							a website directly from a GitHub repository.</i></p>
-					<p style="font-size: medium;" class="fragment"><i>In fact, this presentation itself is hosted through GitHub Pages: 
-						<a target="_blank" href="https://cooksey99.github.io/git_presentation/">https://cooksey99.github.io/git_presentation/</a></i></p>
+					<p style="font-size: medium;" class="fragment"><i>In fact, this presentation itself is hosted
+							through GitHub Pages:
+							<a target="_blank"
+								href="https://cooksey99.github.io/git_presentation/">https://cooksey99.github.io/git_presentation/</a></i>
+					</p>
 					</i></p>
 				</section>
 				<section>
@@ -287,9 +253,19 @@
 					<p>Issues</p>
 					<p style="font-size: medium;" class="fragment"><i>Issues are a feature that allows developers to
 							track bugs, enhancements, and other requests.</i></p>
+					<p style="font-size: medium;" class="fragment"><i>Issues can be assigned to developers, and can be
+							linked to pull requests.</i></p>
+				</section>
+				<section>
+					<p>Projects</p>
+					<p style="font-size: medium;" class="fragment"><i>Projects are a feature that allows developers to
+							track tasks, enhancements, and other requests.</i></p>
+					<p style="font-size: medium;" class="fragment"><i>Projects can be assigned to developers, and can be
+							linked to pull requests.</i></p>
 				</section>
 			</section>
 
+			<!-- BEGINNING OF WALKTHROUGHS -->
 			<section>
 				<section>Walkthrough: <b>Initialize Repository</b></section>
 				<section>
@@ -409,9 +385,23 @@
 					<p>The changes have been staged and committed, but they are still only on our local machine.</p>
 				</section>
 			</section>
+
 			<section>
 				<section>
 					<p>Walkthrough: <b>Create Remote Repository</b></p>
+				</section>
+				<section>
+					<p>Before Continuing...</p>
+					<p style="font-size: medium;" class="fragment"><i>If you don't plan on using GitHub Desktop, follow
+							these directions to set-up SSH before continuing:</i></p>
+					<ul>
+						<li style="font-size: medium;" class="fragment"><a target="_blank"
+								href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a>
+						</li>
+						<li style="font-size: medium;" class="fragment"><a target="_blank"
+								href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account</a>
+						</li>
+					</ul>
 				</section>
 				<section>
 					<p>Let's create a remote repository on Github</p>
@@ -472,6 +462,44 @@
 							section</b></p>
 					<p style="font-size: medium;" class="fragment"><b>The command automatically generated that for
 							us.</b></p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>Walkthrough: <b>Pushing Changes</b></p>
+				</section>
+				<section>
+					<p>Now that we have a remote repository, let's push our changes to it</p>
+					<p style="font-size: medium;"><i>In your local project repository, run the following command:</i>
+					</p>
+					<pre><code class="typing language-bash" style="font-size: medium;">
+						# git push &lt;remote&gt; &lt;branch&gt;</code>
+						<code style="font-size: medium;" class="typing">						git push origin main
+					</code></pre>
+					<ul style="font-size: medium;">
+						<li><code>origin</code>: the name of the remote repository</li>
+						<li><code>main</code>: the name of the branch</li>
+					</ul>
+				</section>
+				<section>
+					<p>There is actually another common method to perform that action</p>
+					<p style="font-size: medium;"><i>In your local project repository, run the following command:</i></p>
+					<pre><code class="typing language-bash" style="font-size: medium;">
+						# git push --set-upstream &lt;remote&gt; &lt;branch&gt;</code>
+						<code style="font-size: medium;" class="typing">						git push --set-upstream origin main
+					</code></pre>
+					<p style="font-size: medium;" class="fragment"><b>Notice the <code>--set-upstream</code> flag</b>
+					</p>
+					<p style="font-size: medium;" class="fragment"><b>This command will set the default remote and
+							branch for future pushes</b></p>
+					<p style="font-size: medium;" class="fragment"><b>After running this command, you can simply run
+							<code>git push</code> to push changes to the remote repository</b></p>
+				</section>
+				<section>
+					<p>Now let's check our remote repository</p>
+					<p style="font-size: medium;"><i>On Github, navigate to your repository</i></p>
+					<img src="/data/images/remote-repo.png" alt="Remote Repository" style="border-radius: 15px;">
+					<p style="font-size: medium;" class="fragment"><b>Click on the "Code" button</b></p>
 				</section>
 			</section>
 		</div>
