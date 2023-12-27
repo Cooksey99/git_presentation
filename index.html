@@ -137,7 +137,7 @@
 					<li style="font-size: medium;" class="fragment">There can be multiple remotes</li>
 				</section>
 				<section>
-					<img src="/public/images/managing-branches.png" alt="Managing Branches">
+					<img src="/dist/images/managing-branches.png" alt="Managing Branches">
 				</section>
 			</section>
 
@@ -170,7 +170,7 @@
 				</section>
 				<section>
 					<p style="font-size: large;">Creating a tag will generate a new file in <code>.git/refs/tags</code></p>
-					<img src="/public/images/git-tags.png" alt="Tags">
+					<img src="/dist/images/git-tags.png" alt="Tags">
 				</section>
 			</section>
 
@@ -179,31 +179,34 @@
 					<p>Git Workflows</p>
 					<ul style="font-size: medium;" class="fragment">
 						<li>Centralized Workflow</li>
-						<li>Feature Branch Workflow</li>
 						<li>Gitflow Workflow</li>
 						<li>Forking Workflow</li>
+						<li>Feature Branch Workflow</li>
 					</ul>
 				</section>
 				<section>
 					<p>Centralized Workflow</p>
 					<p style="font-size: medium;" class="fragment">All developers work on the main branch</p>
-
 				</section>
-				<section>
-					<p>Feature Branch Workflow</p>
-					<!-- <p style="font-size: medium;" class="fragment"></p> -->
-				</section>
-				<section>
-					<img src="/public/images/feature-branch.png" alt="Feature Branch Workflow">
-				</section>
-
 				<section>
 					<p>Gitflow Workflow</p>
-					<p style="font-size: medium;" class="fragment"></p>
+					<p style="font-size: medium;" class="fragment">Similar to the Feature Branch Workflow, but with
+						additional branches</p>
 				</section>
 				<section>
 					<p>Forking Workflow</p>
-					<p style="font-size: medium;" class="fragment"></p>
+					<p style="font-size: medium;" class="fragment">Each developer has their own fork of the repository</p>
+					<p style="font-size: medium;" class="fragment"><b>This is common with open-source projects</b></p>
+				</section>
+				<section>
+					<p>Feature Branch Workflow</p>
+					<p style="font-size: medium;" class="fragment">Each feature is developed on its own branch</p>
+				</section>
+				<section>
+					<p style="font-size: medium;" class="fragment">Here is an example of the Feature Branch Workflow:</p>
+					<img src="/dist/images/feature-branch.png" alt="Feature Branch Workflow">
+					<p style="font-size: medium;" class="fragment"><b>Notice that the main branch is never directly
+						updated.</b></p>
 				</section>
 			</section>
 
@@ -237,11 +240,11 @@
 					<p style="font-size: medium;" class="fragment"><i>Git will not know which change to keep, so it will ask the developer to resolve the conflict.</i></p>
 					<div style="display: flex; gap: 20px; justify-content: center;" class="fragment">
 						<figure>
-							<img src="/public/images/merge-add.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
+							<img src="/dist/images/merge-add.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
 							<figcaption style="font-size: medium;">The "+" indicates that line was added</figcaption>
 						</figure>
 						<figure>
-							<img src="/public/images/merge-remove.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
+							<img src="/dist/images/merge-remove.png" alt="Merge Conflict" style="border-radius: 15px; width: 300px;">
 							<figcaption style="font-size: medium;">The "-" indicates that line was removed</figcaption>
 						</figure>
 					</div>
@@ -445,13 +448,13 @@
 					<p>Let's create a remote repository on Github</p>
 					<p style="font-size: medium;"><i>Go to <a target="_blank" href="https://github.com">Github</a> and
 							navigate to your profile overview. Near the top, you should see this:</i></p>
-					<img src="/public/images/repo-page.png" alt="GitHub New Repository" style="border-radius: 15px;">
+					<img src="/dist/images/repo-page.png" alt="GitHub New Repository" style="border-radius: 15px;">
 					<p style="font-size: medium;" class="fragment"><b>Click the green button that says "New"</b></p>
 				</section>
 				<section>
 					<p>Name your repository</p>
 					<p style="font-size: medium;"><i>Don't worry, you can change it later!</i></p>
-					<img src="/public/images/create-repo.png" alt="Github Repository" height="450px"
+					<img src="/dist/images/create-repo.png" alt="Github Repository" height="450px"
 						style="border-radius: 15px;">
 					<p style="font-size: medium;"><b>Once you name the repo and select an owner, click the "Create
 							repository" button</b></p>
@@ -459,7 +462,7 @@
 				<section>
 					<p>Now we need to connect our local repository to the remote repository</p>
 					<p style="font-size: medium;"><i>After creating the repository, you should see this:</i></p>
-					<img src="/public/images/quick-setup.png" alt="GitHub quick setup" style="border-radius: 15px;">
+					<img src="/dist/images/quick-setup.png" alt="GitHub quick setup" style="border-radius: 15px;">
 					<p style="font-size: medium;" class="fragment"><b>Copy the link starting with "git@github.com"</b>
 					</p>
 					<p style="font-size: small;" class="fragment"><b>In this case, it would be
@@ -536,10 +539,43 @@
 				<section>
 					<p>Now let's check our remote repository</p>
 					<p style="font-size: medium;"><i>On Github, navigate to your repository</i></p>
-					<img src="/data/images/remote-repo.png" alt="Remote Repository" style="border-radius: 15px;">
-					<p style="font-size: medium;" class="fragment"><b>Click on the "Code" button</b></p>
+					<p style="font-size: medium;" class="fragment"><i>You should see a new commit, and maybe even a pull-request suggestion</i></p>
 				</section>
 			</section>
+			<section>
+					<section>
+						<p>Walkthrough: <b>Opening Pull Requests</b></p>
+					</section>
+					<section>
+						<p>A pull request is a formal request to merge one branch into another branch</p>
+						<p style="font-size: medium;" class="fragment"><i>Typically, this is a feature branch into the main branch</i></p>
+					</section>
+					<section>
+						<p>Let's open a pull request</p>
+						<p style="font-size: medium;"><i>On Github, navigate to your repository</i></p>
+						<p style="font-size: medium;" class="fragment"><i>Click the "Pull requests" tab</i></p>
+						<p style="font-size: medium;" class="fragment"><i>Click the green button that says "New pull
+								request"</i></p>
+					</section>
+					<section>
+						<p style="font-size: medium;" class="fragment"><i>Here is what you should see:</i></p>
+						<img src="/dist/images/create-pr.png" alt="New Pull Request" style="border-radius: 15px;">
+						<p style="font-size: medium;" class="fragment"><i>For our "compare" branch, choose the feature branch with your changes</i></p>
+						<p style="font-size: medium;" class="fragment"><i>For our "base" branch, choose the main branch</i></p>
+					</section>
+					<section>
+						<p style="font-size: medium;" class="fragment"><i>Here is what you should see:</i></p>
+						<img src="/dist/images/compare-branch.png" alt="New Pull Request" style="border-radius: 15px;">
+						<p style="font-size: medium;" class="fragment"><i>Click "Create pull request", then write out what changes you made</i></p>
+
+					</section>
+					<section>
+						<p style="font-size: medium;" class="fragment"><i>Here is what you should see:</i></p>
+						<img src="/dist/images/pr-page.png" alt="New Pull Request" style="border-radius: 15px; width: 50%;">
+						<p style="font-size: medium;" class="fragment"><i>This creates a discussion page that can be used to talk through the code and make suggestion</i></p>
+						<p style="font-size: medium;" class="fragment"><b>Once approved, it can be merged into the main branch</b></p>
+					</section>
+				</section>
 		</div>
 	</div>
 
